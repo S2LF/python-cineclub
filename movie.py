@@ -56,8 +56,10 @@ class Movie():
         if self.title in movies:
             LOGGER.warning(f"Le film '{self.title}' est déjà dans la liste.")
             return False
-        movies.append(self.title)
-        self._write_movies(movies)
+        else :
+            movies.append(self.title)
+            self._write_movies(movies)
+        return True
 
     def remove_from_movies(self):
         """
@@ -68,8 +70,9 @@ class Movie():
         if self.title not in movies:
             LOGGER.warning(f"Le film '{self.title}' n\'est pas dans la liste.")
             return False
-        movies.remove(self.title)
-        self._write_movies(movies)
+        else :
+            movies.remove(self.title)
+            self._write_movies(movies)
         return True
 
 
